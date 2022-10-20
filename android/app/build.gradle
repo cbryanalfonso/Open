@@ -131,6 +131,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         applicationId "com.nuevaof"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -195,6 +196,12 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    // Se añade esto
+
+    implementation project(':react-native-maps')
+
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
